@@ -14,7 +14,6 @@ TARGETS = find . -name \*.jinja* -o -name \*.md \
                  -e 's/jinja-js$$/js/g' \
                  -e 's/jinja$$/html/g'
 
-
 all:
 	@$(TARGETS) |xargs -r $(MAKE)
 
