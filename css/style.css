@@ -17,15 +17,13 @@ text-align: center;
 border-bottom: 2px solid black;}
 
 #content {
- position: absolute;
- left: 50%;
- width:  50em;
- margin-left: -25em;
- height: 50em;
+ margin-left: auto;
+ margin-right:auto;
+ max-width:  50em;
+ overflow: hidden;
 }
 
 #sidebar {
-    position:absolute;
-    top:0; bottom:0; left:0;
-    width:20em;
+    float:left;
+    max-width:25em;
 }
