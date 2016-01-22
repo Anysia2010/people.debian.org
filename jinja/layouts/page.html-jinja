@@ -1,45 +1,33 @@
+{% set webroot = "/~aviau" %}
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
-<style type="text/css">
-
-pre{
-    background-color: #EBECE4;
-    overflow: auto;
-}
-
-a, a:visited {
-text-decoration: none;
-color: blue
-}
-
-a:hover {
-color: red;
-text-decoration: underline;}
-
-h1 {
-text-align: center;
-border-bottom: 2px solid black;}
-
-#content {
-position: absolute;
-left: 50%;
-width:  50em;
-margin-left: -25em;
-height: 50em;
-}
-</style>
-
+<link rel="stylesheet" type="text/css" href="{{webroot}}/css/style.css">
 {% block head %}
 {%- endblock %}
-</head><body>
+</head>
+
+<body>
 {% block body %}
-    {%- block navigation %}
-    {%- endblock %}
+
+    <!-- Navigation -->
+    <div id="sidebar">
+        <h2>Pages</h2>
+        <ul>
+            <li><a href="/">home</a>
+            {%- for page in ls('pages', '\.jinja$') %}
+                {%- set url = page.replace('.jinja', '.html') %}
+                {%- set pagetitle = page.replace('.jinja', '') %}
+                <li>
+                    <a href="{{webroot}}/pages/{{url}}">{{pagetitle}}</a>
+                </li>
+            {%- endfor %}
+        </ul>
+    </div>
+
 
     {%- block page_top %}
     {%- endblock %}

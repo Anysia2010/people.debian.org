@@ -186,10 +186,8 @@ def Main():
 
             # This renders the data, hooray!
             try:
-                os.chdir(variables.get('dir', os.path.dirname(inpath)))
                 template = jinja_env.get_template(inpath)
                 data = template.render(variables).encode('utf-8')
-                os.chdir(basedir)
             except:
                 if depcheck:
                     print '# FAILED DEPS: %s' % inpath
