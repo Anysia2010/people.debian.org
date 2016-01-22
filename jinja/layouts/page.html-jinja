@@ -17,7 +17,7 @@
     <div id="sidebar">
         <h2>Pages</h2>
         <ul>
-            <li><a href="/">home</a>
+            <li><a href="{{webroot}}">home</a>
             {%- for page in ls('pages', '\.jinja$') %}
                 {%- set url = page.replace('.jinja', '.html') %}
                 {%- set pagetitle = page.replace('.jinja', '') %}
