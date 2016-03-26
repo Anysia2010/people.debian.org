@@ -2,3 +2,4 @@
 make
 ssh people.debian.org "rm -rf ~/public_html/* && ln -s ~/debian ~/public_html/debian"
 rsync -e 'ssh -ax' -av --exclude=.git . people.debian.org:public_html/
+scp config/mini-dinstall.conf people.debian.org:.mini-dinstall.conf
