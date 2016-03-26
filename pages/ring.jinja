@@ -1,0 +1,22 @@
+{% extends "/layouts/page.html-jinja" %}
+{% block content %}
+
+<h1>Debian packaging for Ring (ring.cx)</h1>
+
+<p> I am the maintainer for Ring in Debian. The purpose of this page is to allow people to test the Ring packages before I upload them to Debian. It shouldn't be used for other purposes. I don't intend to keep it up-to-date.
+
+<h2>Installing the repository</h2>
+<pre>
+apt-key adv --keyserver keyring.debian.org --recv 3CCC3A3A
+echo 'deb https://people.debian.org/~aviau/debian ring/' > /etc/apt/sources.list.d/ring.list
+</pre>
+
+<h2>Installing Ring</h2>
+<pre>
+apt-get update
+apt-get install ring
+</pre>
+
+Enjoy!
+
+{% endblock %}
